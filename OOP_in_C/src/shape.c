@@ -6,12 +6,12 @@
  */
 #include "shape.h"
 
-void Shape_ctor(Shape *const me, int x, int y){
+void Shape_ctor(Shape * const me, int x, int y){
 	me->x = x;
 	me->y = y;
 }
 
-void Shape_moveBy(Shape *const me, int dx, int dy){
+void Shape_moveBy(Shape * const me, int dx, int dy){
 	me->x = me->x + dx;
 	me->y = me->y + dy;
 }
