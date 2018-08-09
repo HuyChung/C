@@ -13,7 +13,13 @@
 
 unsigned int Buffer_Data;
 
-const int *Buffer_Pointer_Data;
+unsigned int Buffer_Pointer_Data;
+
+void Write_PointerToConstant(unsigned int sendData);
+void Read_PointerToConstant(const int **readData);
+void test_PointerToConstant();
+void ReadData_func(unsigned int *readData);
+void WriteData_func(unsigned int sendData);
 
 int main(void) {
 	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
@@ -34,7 +40,7 @@ int main(void) {
 
 	// Test truyen vao con tro hang(pointer to constant: const int *px) trong C
 	puts("!!!Test truyen vao con tro hang - const int *p_data!!!");
-	const int *send_Pointer_Data = 789;
+	unsigned int send_Pointer_Data = 789;
 	const int *read_Pointer_Data = 0;
 
 	Write_PointerToConstant(send_Pointer_Data);
@@ -70,7 +76,7 @@ void test_PointerToConstant(){
 }
 
 // Ghi du lieu vao bo dem Buffer_Pointer_Data
-void Write_PointerToConstant(const int *sendData){
+void Write_PointerToConstant(unsigned int sendData){
 	Buffer_Pointer_Data = sendData;
 }
 
